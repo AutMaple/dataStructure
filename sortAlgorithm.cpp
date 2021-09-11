@@ -22,3 +22,28 @@ void directInsertSort(int nums[], int length)
         }
     }
 }
+
+void binaryInsertSort(int nums[], int length)
+{
+    for(int i = 1; i < length; i++)
+    {
+        int low = 0;
+        int high = i - 1;
+        int tmp = nums[i];
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+            if(nums[mid] > nums[i])
+            {
+                high = mid - 1;
+            }else{ // 相等的情况让其再走一次循环，从而保证算法的稳定性
+                low = low + 1;
+            }
+        }
+        for(int j = i; j > low; j--)
+        {
+            nums[j] = nums[j-1];
+        }
+        nums[low] = tmp;
+    }
+}
