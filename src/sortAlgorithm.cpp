@@ -1,5 +1,4 @@
 #include "headers/sortAlgorithm.h"
-using namespace std;
 
 /*
  * 直接选择排序
@@ -15,8 +14,8 @@ void directInsertSort(int nums[], int length)
                 nums[j] = nums[j-1];
                 nums[j-1] = tmp; 
             }else{
-                // 如果不满足条件，说明不需要改变位置
-                // 直接跳出本次循环
+                // 由于前面的序列是有序的， 因此，如果不满足条件，说明插入的位置已经找到了
+                // 直接跳出本层循环
                 break;
             }
         }
@@ -45,5 +44,24 @@ void binaryInsertSort(int nums[], int length)
             nums[j] = nums[j-1];
         }
         nums[low] = tmp;
+    }
+}
+
+/*
+ * 希尔排序
+ * */
+void shellSort(int nums[], int length, int step)
+{
+    for(int d = step; d >= 1; d = d / 2){
+        // 下面的代码使用的是直接插入排序的思想
+        for(int i = 0; i < length; i++){
+            for(int j = i - d; j >= 0; j-=d){
+                if(nums[j+d] < nums[j]){ // 决定从小到大排序
+                    int temp = nums[j];
+                    nums[j] = nums[j+d];
+                    nums[j+d] = temp;
+                }
+            }
+        }
     }
 }
