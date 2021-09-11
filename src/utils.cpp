@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <random>
 //
 // Created by autmaple on 2021/9/11.
 //
@@ -16,10 +17,12 @@ void printArray(int nums[], int length)
 int* randomArrary(int arrSize, int minNum, int maxNum)
 {
     int * arr = new int[arrSize];
-    srand(time(nullptr));
+    std::random_device device;
+    std::default_random_engine engine(device());
+    std::uniform_int_distribution<int> distribution(minNum, maxNum);
     for(int i = 0; i < arrSize; i++)
     {
-        arr[i] = rand() % (maxNum - minNum) + minNum;
+        arr[i] = distribution(engine);
     }
     return arr;
 }
