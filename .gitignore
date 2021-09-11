@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+/home/autmaple/code/dataStructure/cmake-build-debug
+/home/autmaple/code/dataStructure/CMakeLists.txt
+/home/autmaple/code/dataStructure/test.cpp
