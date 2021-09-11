@@ -24,6 +24,14 @@ public:
         binaryInsertSort(arr, arrSize);
         printArray(arr, arrSize);
     }
+
+    static void testShellSort(){
+        int arrSize = 20;
+        int* arr = randomArrary(arrSize, 5, 30);
+        printArray(arr,arrSize);
+        shellSort(arr, arrSize, 10);
+        printArray(arr,arrSize);
+    }
 };
 
 
@@ -31,6 +39,7 @@ public:
 int main()
 {
 //    Test::testDirectInsertSort();
-    Test::testBinaryInsertSort();
+//    Test::testBinaryInsertSort();
+    Test::testShellSort();
     return 0;
 }
