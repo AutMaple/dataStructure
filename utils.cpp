@@ -19,7 +19,7 @@ int* randomArrary(int arrSize, int minNum, int maxNum)
     srand(time(nullptr));
     for(int i = 0; i < arrSize; i++)
     {
-        arr[i] = rand() % (maxNum - minNum);
+        arr[i] = rand() % (maxNum - minNum) + minNum;
     }
     return arr;
 }
