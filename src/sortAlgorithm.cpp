@@ -48,9 +48,9 @@ void binaryInsertSort(int nums[], int length)
 }
 
 /*
- * 希尔排序
+ * 希尔直接插入排序
  * */
-void shellSort(int nums[], int length, int step)
+void shellDirectSort(int nums[], int length, int step)
 {
     for(int d = step; d >= 1; d = d / 2){
         // 下面的代码使用的是直接插入排序的思想
@@ -62,6 +62,31 @@ void shellSort(int nums[], int length, int step)
                     nums[j+d] = temp;
                 }
             }
+        }
+    }
+}
+
+/*
+ * 希尔折半插入排序
+ * */
+void shellBinarySort(int nums[], int length, int step){
+    for(int d = step; d >= 1; d = d / 2){
+        for(int i = 0; i < length; i++){
+            int low = i % d;
+            int high = i - d;
+            while(low <= high){
+                int mid = ((low + high) / (2 * d)) * d;
+                if(nums[mid] > nums[i]){
+                    high = high - d;
+                }else{
+                    low = low + d;
+                }
+            }
+            int tmp = nums[i];
+            for(int j = i; j > low && j-d >= 0; j-=d){
+                nums[j] = nums[j-d];
+            }
+            nums[low] = tmp;
         }
     }
 }
