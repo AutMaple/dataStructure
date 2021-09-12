@@ -25,6 +25,7 @@ public:
         printArray(arr, arrSize);
     }
 
+    /*测试希尔直接插入排序*/
     static void testShellDirectSort(){
         int arrSize = 20;
         int* arr = randomArrary(arrSize, 5, 30);
@@ -33,6 +34,7 @@ public:
         printArray(arr,arrSize);
     }
 
+    /*测试希尔折半插入排序*/
     static void testShellBinarySort(){
         int arrSize = 20;
         int* arr = randomArrary(arrSize, 5, 30);
