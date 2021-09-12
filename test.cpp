@@ -25,11 +25,19 @@ public:
         printArray(arr, arrSize);
     }
 
-    static void testShellSort(){
+    static void testShellDirectSort(){
         int arrSize = 20;
         int* arr = randomArrary(arrSize, 5, 30);
         printArray(arr,arrSize);
-        shellSort(arr, arrSize, 10);
+        shellDirectSort(arr, arrSize, 10);
+        printArray(arr,arrSize);
+    }
+
+    static void testShellBinarySort(){
+        int arrSize = 20;
+        int* arr = randomArrary(arrSize, 5, 30);
+        printArray(arr,arrSize);
+        shellBinarySort(arr, arrSize, 10);
         printArray(arr,arrSize);
     }
 };
@@ -40,6 +48,7 @@ int main()
 {
 //    Test::testDirectInsertSort();
 //    Test::testBinaryInsertSort();
-    Test::testShellSort();
+//    Test::testShellDirectSort();
+    Test::testShellBinarySort();
     return 0;
 }
