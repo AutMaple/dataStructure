@@ -12,3 +12,8 @@ void shellBinarySort(int nums[], int length, int step);
 
 /*冒泡排序*/
 void bubbleSort(int nums[], int length);
+
+/* 快速排序 */
+void quickSort(int nums[], int low, int high);
+int partition(int nums[], int low, int high);
+
