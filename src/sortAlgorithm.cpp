@@ -3,13 +3,10 @@
 /*
  * 直接选择排序
  * */
-void directInsertSort(int nums[], int length)
-{
+void directInsertSort(int nums[], int length){
     for (int i = 1; i < length; ++i) {
-        for(int j = i; j >= 0; j--)
-        {
-            if(nums[j] < nums[j-1])
-            {
+        for(int j = i; j >= 0; j--){
+            if(nums[j] < nums[j-1]){
                 int tmp = nums[j];
                 nums[j] = nums[j-1];
                 nums[j-1] = tmp; 
@@ -22,25 +19,20 @@ void directInsertSort(int nums[], int length)
     }
 }
 
-void binaryInsertSort(int nums[], int length)
-{
-    for(int i = 1; i < length; i++)
-    {
+void binaryInsertSort(int nums[], int length){
+    for(int i = 1; i < length; i++){
         int low = 0;
         int high = i - 1;
         int tmp = nums[i];
-        while(low <= high)
-        {
+        while(low <= high){
             int mid = (low + high) / 2;
-            if(nums[mid] > nums[i])
-            {
+            if(nums[mid] > nums[i]){
                 high = mid - 1;
             }else{ // 相等的情况让其再走一次循环，从而保证算法的稳定性
                 low = low + 1;
             }
         }
-        for(int j = i; j > low; j--)
-        {
+        for(int j = i; j > low; j--){
             nums[j] = nums[j-1];
         }
         nums[low] = tmp;
@@ -87,6 +79,19 @@ void shellBinarySort(int nums[], int length, int step){
                 nums[j] = nums[j-d];
             }
             nums[low] = tmp;
+        }
+    }
+}
+
+/*冒泡排序*/
+void bubbleSort(int nums[], int length){
+    for(int i = 0; i < length -1; i++){
+        for(int j = 1; j < length - i; j++){
+            if(nums[j] < nums[j-1]){
+                int tmp = nums[j];
+                nums[j] = nums[j-1];
+                nums[j-1] = tmp;
+            }
         }
     }
 }

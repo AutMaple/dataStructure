@@ -9,3 +9,6 @@ void shellDirectSort(int nums[], int length, int step);
 
 /*希尔折半排序*/
 void shellBinarySort(int nums[], int length, int step);
+
+/*冒泡排序*/
+void bubbleSort(int nums[], int length);
