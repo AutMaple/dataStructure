@@ -15,4 +15,9 @@ void printArray(int nums[], int length);
  * */
 int* randomArrary(int arrSize, int minNum, int maxNum);
 
+/*
+ * 交换两个数字
+ * */
+void swap(int nums[], int i, int j);
+
 #endif //DATASTRUCTURE_UTILS_H
