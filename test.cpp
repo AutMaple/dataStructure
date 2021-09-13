@@ -1,5 +1,6 @@
 #include "headers/sortAlgorithm.h"
 #include "headers/utils.h"
+#include <iostream>
 
 class Test{
 public:
@@ -51,6 +52,16 @@ public:
         bubbleSort(arr, arrSize);
         printArray(arr,arrSize);
     }
+
+    /*测试快速排序*/
+    static void testQuickSort(){
+        std::cout << "测试快速排序" << std::endl;
+        int arrSize = 20;
+        int* arr = randomArrary(arrSize, 5, 30);
+        printArray(arr,arrSize);
+        quickSort(arr, 0, arrSize -1);
+        printArray(arr,arrSize);
+    }
 };
 
 
@@ -61,6 +72,6 @@ int main()
 //    Test::testBinaryInsertSort();
 //    Test::testShellDirectSort();
 //    Test::testShellBinarySort();
-    Test::testBubbleSort();
-    return 0;
+    // Test::testBubbleSort();
+    Test::testQuickSort();
 }
