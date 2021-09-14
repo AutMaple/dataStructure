@@ -76,11 +76,11 @@ public:
 
 int main()
 {
-//    Test::testDirectInsertSort();
+    Test::testDirectInsertSort();
 //    Test::testBinaryInsertSort();
 //    Test::testShellDirectSort();
 //    Test::testShellBinarySort();
-    // Test::testBubbleSort();
+//     Test::testBubbleSort();
 //    Test::testQuickSort();
-    Test::testSelectSort();
+//    Test::testSelectSort();
 }

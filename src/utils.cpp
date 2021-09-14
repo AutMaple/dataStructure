@@ -27,8 +27,8 @@ int* randomArrary(int arrSize, int minNum, int maxNum)
     return arr;
 }
 
-void swap(int nums[], int i, int j){
-    int tmp = nums[i];
-    nums[i] = nums[j];
-    nums[j] = tmp;
+void swap(int &a, int &b){
+    int tmp = a;
+    a = b;
+    b = tmp;
 }

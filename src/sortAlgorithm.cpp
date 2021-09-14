@@ -1,4 +1,5 @@
 #include "headers/sortAlgorithm.h"
+#include "headers/utils.h"
 /*
  * 直接选择排序
  * */
@@ -10,9 +11,7 @@ void directInsertSort(int nums[], int length)
         {
             if (nums[j] < nums[j - 1])
             {
-                int tmp = nums[j];
-                nums[j] = nums[j - 1];
-                nums[j - 1] = tmp;
+                swap(nums[j], nums[j-1]);
             }
             else
             {
@@ -65,9 +64,12 @@ void shellDirectSort(int nums[], int length, int step)
             {
                 if (nums[j + d] < nums[j])
                 { // 决定从小到大排序
+/*
                     int temp = nums[j];
                     nums[j] = nums[j + d];
                     nums[j + d] = temp;
+*/
+                    swap(nums[j], nums[j+d]);
                 }
             }
         }
@@ -116,9 +118,7 @@ void bubbleSort(int nums[], int length)
         {
             if (nums[j] < nums[j - 1])
             {
-                int tmp = nums[j];
-                nums[j] = nums[j - 1];
-                nums[j - 1] = tmp;
+                swap(nums[j], nums[j-1]);
             }
         }
     }
@@ -159,8 +159,6 @@ void selectSort(int nums[], int length){
                 min = j;
             }
         }
-        int tmp = nums[i];
-        nums[i] = nums[min];
-        nums[min] = tmp;
+    swap(nums[i], nums[min]);
     }
 }
