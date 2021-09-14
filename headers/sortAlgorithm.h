@@ -17,3 +17,5 @@ void bubbleSort(int nums[], int length);
 void quickSort(int nums[], int low, int high);
 int partition(int nums[], int low, int high);
 
+/* 简单选择排序 */
+void selectSort(int nums[], int length);

@@ -1,5 +1,4 @@
 #include "headers/sortAlgorithm.h"
-#include "headers/utils.h"
 /*
  * 直接选择排序
  * */
@@ -149,4 +148,19 @@ int partition(int nums[], int low, int high){
     }
     nums[low] = tmp;
     return low;
+}
+
+void selectSort(int nums[], int length){
+    // 一共需要进行 n - 1 次循环
+    for(int i = 0; i < length - 1; i++){
+        int min = i;
+        for(int j = i; j < length; j++){
+            if(nums[j] < nums[min]) {
+                min = j;
+            }
+        }
+        int tmp = nums[i];
+        nums[i] = nums[min];
+        nums[min] = tmp;
+    }
 }
