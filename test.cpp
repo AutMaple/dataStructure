@@ -62,6 +62,14 @@ public:
         quickSort(arr, 0, arrSize -1);
         printArray(arr,arrSize);
     }
+    /* 测试简单选择排序 */
+    static void testSelectSort(){
+        int arrSize = 20;
+        int* arr = randomArrary(arrSize, 5, 30);
+        printArray(arr, arrSize);
+        selectSort(arr, arrSize);
+        printArray(arr, arrSize);
+    }
 };
 
 
@@ -73,5 +81,6 @@ int main()
 //    Test::testShellDirectSort();
 //    Test::testShellBinarySort();
     // Test::testBubbleSort();
-    Test::testQuickSort();
+//    Test::testQuickSort();
+    Test::testSelectSort();
 }
